@@ -53,7 +53,7 @@ const userSchema = new Schema({
 //call back isi trah se likhna hota hai kyuki () =>() isme this. use ni kr skte
 userSchema.pre("save",async function(next) {
    if(!this.isModified("password"))    //inbuilt hota hai to check ki modification hua hai ki nai
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
 //custom method

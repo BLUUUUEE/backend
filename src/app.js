@@ -19,4 +19,13 @@ app.use(cookieParser())
 
 
 
+// routes
+
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+// router ko lane ke lye middleware use krna pdega
+
+app.use("/api/v1/users",userRouter)
+
 export {app}
