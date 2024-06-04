@@ -80,15 +80,15 @@ const user = await User.create({
     "-password -refreshToken"
    )
    if(!createdUser){
-   if(createdUser){
     throw new ApiError(500,"something went wrong while registering the user")
    }
 
 return res.status(201).json(
     new ApiResponse(200, createdUser, "User registered successfully")
 )
+
 }
-}
+
 )
 const loginUser = asyncHandler(  async(req,res)=>{
 // req body
